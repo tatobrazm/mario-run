@@ -85,25 +85,32 @@ const loop = setInterval(() => {
 
     press.src = "./media/images/pressione.png";
 
-    setTimeout(()=>{
+    setTimeout(() => {
       clearInterval(loop);
       document.addEventListener("keydown", () => {
         window.location.reload();
       });
     }, 500);
 
-    setTimeout(()=>{
+    setTimeout(() => {
       clearInterval(loop);
       document.addEventListener("click", () => {
         window.location.reload();
       });
     }, 500);
-    
+
+    setTimeout(() => {
+      clearInterval(loop);
+      document.addEventListener("touchstart", () => {
+        window.location.reload();
+      });
+    }, 500);
   }
 }, 10);
 
 document.addEventListener("keydown", jump);
-document.body.addEventListener('click', jump);
+document.body.addEventListener("click", jump);
+document.body.addEventListener("touchstart", jump);
 
 window.onload = function () {
   startTimer(duration, display, pontos);

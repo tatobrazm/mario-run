@@ -38,7 +38,7 @@ function intensidade(intervalo, volta = 0) {
     const pipePosition = pipe.offsetLeft;
     if (pipePosition <= -1) {
       ++volta;
-      if (volta >= 20 * indice) {
+      if (volta >= 10 * indice) {
         ++indice;
         pipe.style.animation =
           "pipe-animation " + dificuldade + "s infinite linear";

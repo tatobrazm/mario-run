@@ -50,8 +50,6 @@ function intensidade(intervalo, volta = 0) {
           clearInterval(loopIntensidade);
         }
       }
-      console.log("contagem: " +volta);
-      console.log("dificuldade: " +dificuldade);
     }
   }, 100);
 }

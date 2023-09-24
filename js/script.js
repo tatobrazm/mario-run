@@ -58,7 +58,7 @@ function intensidade(intervalo, volta = 0) {
 
 const jump = () => {
   mario.classList.add("jump");
-  audio_jump.src = "./musics/mb_jump_normalizado.wav";
+  audio_jump.src = "./media/musics/mb_jump_normalizado.wav";
 
   setTimeout(() => {
     mario.classList.remove("jump");
@@ -80,12 +80,12 @@ const loop = setInterval(() => {
     mario.style.bottom = `${marioPosition}px`;
 
     audio.src = "";
-    audio_fail.src = "./musics/smw_lost_a_life_normalizado.wav";
-    mario.src = "./images/gameover.webp";
+    audio_fail.src = "./media/musics/smw_lost_a_life_normalizado.wav";
+    mario.src = "./media/images/gameover.webp";
     mario.style.width = "80px";
     mario.style.marginLeft = "50px";
 
-    press.src = "./images/pressione.png";
+    press.src = "./media/images/pressione.png";
 
     setTimeout(()=>{
       clearInterval(loop);

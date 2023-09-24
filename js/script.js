@@ -34,15 +34,15 @@ function intensidade(intervalo, volta = 0) {
   var niveli = 1;
   var indice = 1;
   var dificuldade = intervalo;
-  const loopIntensidade = setInterval(() => {
+  /*const loopIntensidade = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
     if (pipePosition <= -1) {
       ++volta;
-      if (volta >= 10 * indice) {
+      if (volta >= 20 * indice) {
         ++indice;
         pipe.style.animation =
           "pipe-animation " + dificuldade + "s infinite linear";
-        if ((dificuldade = (dificuldade - Number(0.1)).toFixed(1))) {
+        if ((dificuldade = (dificuldade - Number(0.01)).toFixed(2))) {
           ++niveli;
           nivel.textContent = "Dificuldade: " + niveli;
         }
@@ -51,7 +51,7 @@ function intensidade(intervalo, volta = 0) {
         }
       }
     }
-  }, 100);
+  }, 100);*/
 }
 
 const jump = () => {

@@ -91,11 +91,19 @@ const loop = setInterval(() => {
         window.location.reload();
       });
     }, 500);
+
+    setTimeout(()=>{
+      clearInterval(loop);
+      document.addEventListener("click", () => {
+        window.location.reload();
+      });
+    }, 500);
     
   }
 }, 10);
 
 document.addEventListener("keydown", jump);
+document.body.addEventListener('click', jump);
 
 window.onload = function () {
   startTimer(duration, display, pontos);

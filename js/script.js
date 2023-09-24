@@ -69,7 +69,7 @@ const loop = setInterval(() => {
   const marioPosition = +window
     .getComputedStyle(mario)
     .bottom.replace("px", "");
-  if (pipePosition <= 95 && pipePosition > 0 && marioPosition < 80) {
+  if (pipePosition <= 75 && pipePosition > 0 && marioPosition < 50) {
     parar = true;
     pipe.style.animation = "none";
     pipe.style.left = `${pipePosition}px`;
@@ -80,8 +80,8 @@ const loop = setInterval(() => {
     audio.src = "";
     audio_fail.src = "./media/musics/smw_lost_a_life_normalizado.wav";
     mario.src = "./media/images/gameover.webp";
-    mario.style.width = "80px";
-    mario.style.marginLeft = "50px";
+    mario.style.width = "50px";
+    mario.style.marginLeft = "38px";
 
     press.src = "./media/images/pressione.png";
 

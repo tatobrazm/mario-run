@@ -5,6 +5,7 @@ const audio = document.querySelector(".audio");
 const audio_jump = document.querySelector(".audio_jump");
 const audio_fail = document.querySelector(".audio_fail");
 const press = document.querySelector(".press");
+const press2 = document.querySelector(".press2");
 const display = document.querySelector("#timer");
 const pontos = document.querySelector("#pontos");
 const nivel = document.querySelector("#nivel");
@@ -14,11 +15,15 @@ var duration = 0;
 var intervalo = 4;
 var bonusi = 0;
 var pipeid = 1;
+var colidiu = false;
+
+pipe2.style.right = "-180px";
 
 function startTimer(duration, display, pontos) {
   var timer = duration,
     minutes,
     seconds;
+
   const info = setInterval(function () {
     if (parar == true) {
       clearInterval(info);
@@ -76,7 +81,7 @@ function intensidade(intervalo, volta = 0) {
 
         if ((dificuldade = (dificuldade - Number(0.1)).toFixed(2))) {
           ++niveli;
-          nivel.textContent = "Dificuldade: " + niveli;
+          nivel.textContent = "Velocidade: " + niveli;
         }
         if (dificuldade == 0.4) {
           bonusi += 10000;
@@ -106,13 +111,12 @@ const loop = setInterval(() => {
   const marioPosition = +window
     .getComputedStyle(mario)
     .bottom.replace("px", "");
-
-  console.log(pipePosition2);
   if (
     (pipePosition <= 75 && pipePosition > 0 && marioPosition < 50) ||
     (pipePosition2 <= 75 && pipePosition2 > 0 && marioPosition < 50)
   ) {
     parar = true;
+    colidiu = true;
 
     pipe.src = "./media/images/pipe_plant.png";
     pipe.style.animation = "none";
@@ -133,21 +137,8 @@ const loop = setInterval(() => {
     mario.style.width = "50px";
     mario.style.marginLeft = "38px";
 
-    press.src = "./media/images/pressione.png";
-
-    setTimeout(() => {
-      clearInterval(loop);
-      document.addEventListener("keydown", () => {
-        window.location.reload();
-      });
-    }, 500);
-
-    setTimeout(() => {
-      clearInterval(loop);
-      document.addEventListener("click", () => {
-        window.location.reload();
-      });
-    }, 500);
+    press.src = "./media/images/enter_iniciar.png";
+    press2.src = "./media/images/mario_blz.png";
 
     setTimeout(() => {
       clearInterval(loop);
@@ -165,9 +156,23 @@ const loop = setInterval(() => {
   }
 }, 10);
 
-document.addEventListener("keydown", jump);
-document.body.addEventListener("click", jump);
 document.body.addEventListener("touchstart", jump);
+
+document.body.addEventListener("keydown", (event) => {
+  const keyName = event.key;
+  if (keyName === "Enter") {
+    if (colidiu === true) {
+      window.location.reload();
+    }
+  } else if (keyName === "ArrowUp") {
+    mario.classList.add("jump");
+    audio_jump.src = "./media/musics/mb_jump_normalizado.wav";
+    setTimeout(() => {
+      mario.classList.remove("jump");
+      audio_jump.src = "";
+    }, 500);
+  }
+});
 
 window.onload = function () {
   startTimer(duration, display, pontos);

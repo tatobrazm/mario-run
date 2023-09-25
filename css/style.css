@@ -157,10 +157,18 @@
 
 .job-title {
   font-size: 16px;
+  margin-bottom: 40px;
   font-weight: bold;
   color: #0077b5;
   text-decoration: none;
   text-decoration: underline;
+}
+
+.infoadd {
+  font-size: 12px;
+  font-weight: italic;
+  color: #fb2a00;
+  
 }
 
 .pisca {

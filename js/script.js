@@ -135,7 +135,7 @@ const loop = setInterval(() => {
     audio_fail.src = "./media/musics/smw_lost_a_life_normalizado.wav";
     mario.src = "./media/images/mario_zonzo.gif";
     mario.style.width = "80px";
-    mario.style.marginLeft = "15px";
+    mario.style.marginLeft = "5px";
 
     press.src = "./media/images/enter_iniciar.png";
     press2.src = "./media/images/iniciar.gif";

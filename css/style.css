@@ -36,7 +36,7 @@
   position: absolute;
   bottom: -6px;
   width: 70px;
-  right: '';
+  right: "";
 }
 
 .mario {
@@ -90,9 +90,9 @@
 
 .press2 {
   position: absolute;
-  left: 45%;
-  width: 50px;
-  bottom: 130px;
+  left: 42%;
+  width: 120px;
+  bottom: 110px;
 }
 
 .div_press {
@@ -128,6 +128,39 @@
   word-spacing: 2px;
   right: -913px;
   bottom: 270px;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.linkedin-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.github-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.job-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #0077b5;
+  text-decoration: none;
+  text-decoration: underline;
 }
 
 @keyframes pipe-animation {

@@ -112,8 +112,8 @@ const loop = setInterval(() => {
     .getComputedStyle(mario)
     .bottom.replace("px", "");
   if (
-    (pipePosition <= 75 && pipePosition > 0 && marioPosition < 50) ||
-    (pipePosition2 <= 75 && pipePosition2 > 0 && marioPosition < 50)
+    (pipePosition <= 65 && pipePosition > 0 && marioPosition < 50) ||
+    (pipePosition2 <= 65 && pipePosition2 > 0 && marioPosition < 50)
   ) {
     parar = true;
     colidiu = true;
@@ -133,12 +133,12 @@ const loop = setInterval(() => {
 
     audio.src = "";
     audio_fail.src = "./media/musics/smw_lost_a_life_normalizado.wav";
-    mario.src = "./media/images/gameover.webp";
-    mario.style.width = "50px";
-    mario.style.marginLeft = "38px";
+    mario.src = "./media/images/mario_zonzo.gif";
+    mario.style.width = "80px";
+    mario.style.marginLeft = "15px";
 
     press.src = "./media/images/enter_iniciar.png";
-    press2.src = "./media/images/mario_blz.png";
+    press2.src = "./media/images/iniciar.gif";
 
     setTimeout(() => {
       clearInterval(loop);

@@ -163,6 +163,26 @@
   text-decoration: underline;
 }
 
+.pisca {
+  position: absolute;
+  left: 30%;
+  width: 350px;
+  bottom: 200px;
+}
+
+.div_pisca {
+  color: #fff;
+  padding: 0.6em 0.8em;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 4px;
+  -webkit-animation: div_pisca 0.75s linear infinite;
+  -moz-animation: div-pisca 0.75s linear infinite;
+  -ms-animation: div-pisca 0.75s linear infinite;
+  -o-animation: div-pisca 0.75s linear infinite;
+  animation: div-pisca 0.75s linear infinite;
+}
+
 @keyframes pipe-animation {
   from {
     right: -10%;
@@ -228,5 +248,17 @@
   }
   to {
     right: 100%;
+  }
+}
+
+@keyframes div-pisca {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }

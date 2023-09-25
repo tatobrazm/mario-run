@@ -6,6 +6,7 @@ const audio_jump = document.querySelector(".audio_jump");
 const audio_fail = document.querySelector(".audio_fail");
 const press = document.querySelector(".press");
 const press2 = document.querySelector(".press2");
+const pisca = document.querySelector(".pisca");
 const display = document.querySelector("#timer");
 const pontos = document.querySelector("#pontos");
 const nivel = document.querySelector("#nivel");
@@ -87,6 +88,10 @@ function intensidade(intervalo, volta = 0) {
           bonusi += 10000;
           clearInterval(loopIntensidade);
         }
+        if (dificuldade == 1.0) {
+          bonusi += 1000;
+          pisca.src = "./media/images/galatico.png";
+        }
         if (parar == true) {
           clearInterval(loopIntensidade);
         }
@@ -139,6 +144,8 @@ const loop = setInterval(() => {
 
     press.src = "./media/images/enter_iniciar.png";
     press2.src = "./media/images/iniciar.gif";
+
+    pisca.src = "";
 
     setTimeout(() => {
       clearInterval(loop);

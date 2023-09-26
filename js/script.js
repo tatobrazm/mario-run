@@ -197,9 +197,10 @@ window.onload = function () {
   if (localStorage.getItem("nome") == null) {
     var nome = window.prompt("Informe seu nome", ["argumento2"]);
     localStorage.setItem("nome", nome);
+    nome = localStorage.getItem("nome");
+    nome_usu.textContent= nome;
   }else{
     nome = localStorage.getItem("nome");
-    console.log(nome);
     nome_usu.textContent= nome;
   }
 

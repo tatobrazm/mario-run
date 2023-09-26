@@ -197,6 +197,7 @@ window.onload = function () {
     localStorage.setItem("nome", nome);
     nome = localStorage.getItem("nome");
     nome_usu.textContent = nome;
+    window.location.reload();
   } else {
     nome = localStorage.getItem("nome");
     nome_usu.textContent = nome;

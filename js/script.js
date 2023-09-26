@@ -99,6 +99,10 @@ function intensidade(intervalo, volta = 0) {
           pisca.src = "./media/images/galatico.png";
         }
         if (parar == true) {
+          if (localStorage.getItem("recorde") < ganhos + bonusi) {
+            vlrrecor = localStorage.setItem("recorde", ganhos + bonusi);
+            recorde.textContent = "Recorde: " + localStorage.getItem("recorde");
+          }
           clearInterval(loopIntensidade);
         }
       }

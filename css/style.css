@@ -137,6 +137,28 @@
   bottom: 270px;
 }
 
+.div_btn {
+  display: flex;
+  position: absolute;
+  left: 50px;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 4px 5px #eee;
+  text-align: center;
+  width: 90px;
+  bottom: 490px;
+}
+
+.btn {
+  z-index: 100;
+  display: flex;
+  position: absolute;
+  text-align: center;
+  width: 80px;
+  height: 20px;
+  font-size: 10px;
+}
+
 .container {
   text-align: center;
   padding: 20px;

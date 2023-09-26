@@ -7,7 +7,6 @@ const audio_fail = document.querySelector(".audio_fail");
 const press = document.querySelector(".press");
 const press2 = document.querySelector(".press2");
 const pisca = document.querySelector(".pisca");
-
 const nome_usu = document.querySelector("#nome_usu");
 const recorde = document.querySelector("#recorde");
 const display = document.querySelector("#timer");
@@ -22,10 +21,10 @@ var pipeid = 1;
 var colidiu = false;
 
 pipe2.style.right = "-180px";
-if(localStorage.getItem("recorde") === null){
-  localStorage.setItem("recorde",0);
+if (localStorage.getItem("recorde") === null) {
+  localStorage.setItem("recorde", 0);
 }
-recorde.textContent= "Recorde: " + localStorage.getItem("recorde");
+recorde.textContent = "Recorde: " + localStorage.getItem("recorde");
 
 function startTimer(duration, display, pontos) {
   var timer = duration,
@@ -129,10 +128,10 @@ const loop = setInterval(() => {
   ) {
     parar = true;
     colidiu = true;
-  
-    if (localStorage.getItem("recorde") < (ganhos+bonusi)) {
-      vlrrecor = localStorage.setItem("recorde",(ganhos+bonusi));
-      recorde.textContent= "Recorde: " + localStorage.getItem("recorde");
+
+    if (localStorage.getItem("recorde") < ganhos + bonusi) {
+      vlrrecor = localStorage.setItem("recorde", ganhos + bonusi);
+      recorde.textContent = "Recorde: " + localStorage.getItem("recorde");
     }
 
     pipe.src = "./media/images/pipe_plant.png";
@@ -176,7 +175,6 @@ const loop = setInterval(() => {
 }, 10);
 
 document.body.addEventListener("touchstart", jump);
-
 document.body.addEventListener("keydown", (event) => {
   const keyName = event.key;
   if (keyName === "Enter") {
@@ -198,12 +196,18 @@ window.onload = function () {
     var nome = window.prompt("Informe seu nome", ["argumento2"]);
     localStorage.setItem("nome", nome);
     nome = localStorage.getItem("nome");
-    nome_usu.textContent= nome;
-  }else{
+    nome_usu.textContent = nome;
+  } else {
     nome = localStorage.getItem("nome");
-    nome_usu.textContent= nome;
+    nome_usu.textContent = nome;
   }
 
   startTimer(duration, display, pontos);
   intensidade(intervalo);
 };
+
+function limpaDados() {
+  localStorage.removeItem("nome");
+  localStorage.removeItem("recorde");
+  window.location.reload();
+}

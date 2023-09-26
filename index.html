@@ -12,6 +12,11 @@
 
 <body>   
     <div class="game-board">
+        <div class="audio-control">
+            <button id="vol-down" class="audio-button" onclick=volumeMenos()>Vol -</button>
+            <button id="vol-up" class="audio-button" onclick=volumeMais()>Vol +</button>
+            <button id="mute" class="audio-button" onclick=volumeMute()>Mute</button>
+          </div>
         <div class="div_btn"><button class="btn" onclick=limpaDados()>Reset</button></div>
         <br>
         <div class="div_press">
@@ -47,17 +52,17 @@
             <img src="./media/images/super_mario_logo.png" class="logo">
         </div>
 
-        <audio class="audio" autoplay loop>
+        <audio id ="volume1" class="audio" autoplay loop>
             <source src="./media/musics/mario_theme_trap_remix.wav" type="audio/mpeg">
         </audio>
         </audio>
 
-        <audio class="audio_jump" autoplay>
+        <audio id ="volume2" class="audio_jump" autoplay>
             <source src="" type="audio/mpeg">
         </audio>
         </audio>
 
-        <audio class="audio_fail" autoplay>
+        <audio id ="volume3" class="audio_fail" autoplay>
             <source src="" type="audio/mpeg">
         </audio>
         </audio>

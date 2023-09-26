@@ -8,11 +8,25 @@ const press = document.querySelector(".press");
 const press2 = document.querySelector(".press2");
 const seta = document.querySelector(".seta");
 const pisca = document.querySelector(".pisca");
+const volume1 = document.getElementById("volume1");
+const volume2 = document.getElementById("volume2");
+const volume3 = document.getElementById("volume2");
+
 const nome_usu = document.querySelector("#nome_usu");
 const recorde = document.querySelector("#recorde");
 const display = document.querySelector("#timer");
 const pontos = document.querySelector("#pontos");
 const nivel = document.querySelector("#nivel");
+
+if (localStorage.getItem("volume") === null) {
+  var volumes = 0.2;
+} else {
+  var volumes = localStorage.getItem("volume");
+}
+
+volume1.volume = volumes;
+volume2.volume = volumes;
+volume3.volume = volumes;
 
 var parar = false;
 var duration = 0;
@@ -155,6 +169,7 @@ const loop = setInterval(() => {
 
     audio.src = "";
     audio_fail.src = "./media/musics/smw_lost_a_life_normalizado.wav";
+    audio_fail.volume = volumes;
     mario.src = "./media/images/mario_zonzo.gif";
     mario.style.width = "80px";
     mario.style.marginLeft = "5px";
@@ -199,7 +214,10 @@ document.body.addEventListener("keydown", (event) => {
 
 window.onload = function () {
   if (localStorage.getItem("nome") == null) {
-    var nome = window.prompt("Bem vindo, informe seu nome para registrar seus records : )", [""]);
+    var nome = window.prompt(
+      "Bem vindo, informe seu nome para registrar seus records : )",
+      [""]
+    );
     localStorage.setItem("nome", nome);
     nome = localStorage.getItem("nome");
     nome_usu.textContent = nome;
@@ -217,4 +235,35 @@ function limpaDados() {
   localStorage.removeItem("nome");
   localStorage.removeItem("recorde");
   window.location.reload();
+}
+
+function volumeMais() {
+  if (Number(localStorage.getItem("volume")) <= Number(0.9)) {
+    const env = (Number(localStorage.getItem("volume")) + Number(0.1));
+    console.log(env);
+    localStorage.setItem("volume", env);
+    volume1.volume = env;
+    volume2.volume = env;
+    volume3.volume = env;
+  }
+}
+
+function volumeMenos() {
+  if (Number(localStorage.getItem("volume")) > Number(0.2)) {
+    const env = (Number(localStorage.getItem("volume")) - Number(0.1));
+    localStorage.setItem("volume", env);
+    volume1.volume = env;
+    volume2.volume = env;
+    volume3.volume = env;
+  }
+}
+
+function volumeMute() {
+  if (Number(volume1.volume) > Number(0)) {
+    volumes = 0;
+    localStorage.setItem("volume", 0);
+    volume1.volume = volumes;
+    volume2.volume = volumes;
+    volume3.volume = volumes;
+  }
 }

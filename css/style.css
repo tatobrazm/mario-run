@@ -150,6 +150,7 @@
 }
 
 .btn {
+  cursor: pointer;
   z-index: 100;
   display: flex;
   left: 2px;
@@ -159,7 +160,6 @@
   height: 20px;
   font-size: 10px;
   font-weight: bold;
-  
   justify-content: center;
   padding: 4px 20px;
   background-color: #3498db;
@@ -170,6 +170,11 @@
   box-shadow: 0 3px 0 #2980b9;
   transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.btn:hover {
+  background-color: #6abef6;
+}
+
 
 .container {
   text-align: center;
@@ -229,6 +234,42 @@
   -ms-animation: div-pisca 0.75s linear infinite;
   -o-animation: div-pisca 0.75s linear infinite;
   animation: div-pisca 0.75s linear infinite;
+}
+
+.audio-control {
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  display: flex;
+  left: 80%;
+  padding: 3px;
+  border-radius: 5px;
+  width: 160px;
+}
+
+.audio-button {
+  z-index: 99;
+  width: 50px;
+  font-weight: bold;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.audio-button:hover {
+  background-color: #6abef6;
+}
+
+#mute {
+  background-color: #ff0000;
+}
+
+#mute:hover {
+  background-color: #cc0000;
 }
 
 @keyframes pipe-animation {

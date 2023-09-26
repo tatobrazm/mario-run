@@ -59,14 +59,14 @@ function intensidade(intervalo, volta = 0) {
     if (parar == true) {
       clearInterval(loopIntensidade);
     }
-    if (pipePosition <= -1 || pipePosition2 <= -1) {
+    if (pipePosition <= -95 || pipePosition2 <= -95) {
       if (pipePosition <= 0) {
         pipeid = 1;
       } else {
         pipeid = 2;
       }
       ++volta;
-      if (volta >= 3 * indice) {
+      if (volta >= 4 * indice) {
         ++indice;
         bonusi += 2 * (indice - 1);
 

@@ -107,14 +107,21 @@
 
 .div_pontos {
   position: absolute;
+  width: 140px;
   justify-content: center;
   font-family: arial, sans-serif;
   font-weight: bold;
+  font-size: 12px;
+  color: #035988;
   text-shadow: 2px 4px 5px #eee;
-  line-height: 1.8em;
+  text-align: center;
+  line-height: 1.0em;
   letter-spacing: 1px;
   word-spacing: 2px;
-  left: 10px;
+  left: 20px;
+  border-width: 2px 5px;
+  border-style: inset ;
+  border-color: #2953be;
 }
 
 .div_ajuda {

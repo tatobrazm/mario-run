@@ -7,6 +7,9 @@ const audio_fail = document.querySelector(".audio_fail");
 const press = document.querySelector(".press");
 const press2 = document.querySelector(".press2");
 const pisca = document.querySelector(".pisca");
+
+const nome_usu = document.querySelector("#nome_usu");
+const recorde = document.querySelector("#recorde");
 const display = document.querySelector("#timer");
 const pontos = document.querySelector("#pontos");
 const nivel = document.querySelector("#nivel");
@@ -19,6 +22,10 @@ var pipeid = 1;
 var colidiu = false;
 
 pipe2.style.right = "-180px";
+if(localStorage.getItem("recorde") === null){
+  localStorage.setItem("recorde",0);
+}
+recorde.textContent= "Recorde: " + localStorage.getItem("recorde");
 
 function startTimer(duration, display, pontos) {
   var timer = duration,
@@ -122,6 +129,11 @@ const loop = setInterval(() => {
   ) {
     parar = true;
     colidiu = true;
+  
+    if (localStorage.getItem("recorde") < (ganhos+bonusi)) {
+      vlrrecor = localStorage.setItem("recorde",(ganhos+bonusi));
+      recorde.textContent= "Recorde: " + localStorage.getItem("recorde");
+    }
 
     pipe.src = "./media/images/pipe_plant.png";
     pipe.style.animation = "none";
@@ -182,6 +194,15 @@ document.body.addEventListener("keydown", (event) => {
 });
 
 window.onload = function () {
+  if (localStorage.getItem("nome") == null) {
+    var nome = window.prompt("Informe seu nome", ["argumento2"]);
+    localStorage.setItem("nome", nome);
+  }else{
+    nome = localStorage.getItem("nome");
+    console.log(nome);
+    nome_usu.textContent= nome;
+  }
+
   startTimer(duration, display, pontos);
   intensidade(intervalo);
 };

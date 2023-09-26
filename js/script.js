@@ -199,7 +199,7 @@ document.body.addEventListener("keydown", (event) => {
 
 window.onload = function () {
   if (localStorage.getItem("nome") == null) {
-    var nome = window.prompt("Informe seu nome", ["argumento2"]);
+    var nome = window.prompt("Bem vindo, informe seu nome para registrar seus records : )", [""]);
     localStorage.setItem("nome", nome);
     nome = localStorage.getItem("nome");
     nome_usu.textContent = nome;

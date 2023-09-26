@@ -47,9 +47,7 @@ function startTimer(duration, display, pontos) {
     seconds;
 
   const info = setInterval(function () {
-    if (parar == true) {
-      clearInterval(info);
-    }
+    
     minutes = parseInt(timer / 60, 10);
     seconds = parseInt(timer % 60, 10);
     minutes = minutes < 10 ? "0" + minutes : minutes;
@@ -61,6 +59,11 @@ function startTimer(duration, display, pontos) {
       timer = duration;
       clearInterval(info);
     }
+    if (parar == true) {
+      clearInterval(info);
+      vlrrecor = localStorage.setItem("recorde", ganhos + bonusi);
+      recorde.textContent = "Recorde: " + localStorage.getItem("recorde");
+    }
   }, 1000);
 }
 
@@ -71,9 +74,6 @@ function intensidade(intervalo, volta = 0) {
   const loopIntensidade = setInterval(() => {
     const pipePosition = pipe.offsetLeft;
     const pipePosition2 = pipe2.offsetLeft;
-    if (parar == true) {
-      clearInterval(loopIntensidade);
-    }
     if (pipePosition <= -95 || pipePosition2 <= -95) {
       if (pipePosition <= 0) {
         pipeid = 1;
@@ -113,14 +113,14 @@ function intensidade(intervalo, volta = 0) {
           bonusi += 1000;
           pisca.src = "./media/images/galatico.png";
         }
-        if (parar == true) {
-          if (localStorage.getItem("recorde") < ganhos + bonusi) {
-            vlrrecor = localStorage.setItem("recorde", ganhos + bonusi);
-            recorde.textContent = "Recorde: " + localStorage.getItem("recorde");
-          }
-          clearInterval(loopIntensidade);
-        }
       }
+    }
+    if (parar == true) {
+      if (localStorage.getItem("recorde") < ganhos + bonusi) {
+        vlrrecor = localStorage.setItem("recorde", ganhos + bonusi);
+        recorde.textContent = "Recorde: " + localStorage.getItem("recorde");
+      }
+      clearInterval(loopIntensidade);
     }
   }, 100);
 }

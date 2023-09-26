@@ -6,6 +6,7 @@ const audio_jump = document.querySelector(".audio_jump");
 const audio_fail = document.querySelector(".audio_fail");
 const press = document.querySelector(".press");
 const press2 = document.querySelector(".press2");
+const seta = document.querySelector(".seta");
 const pisca = document.querySelector(".pisca");
 const nome_usu = document.querySelector("#nome_usu");
 const recorde = document.querySelector("#recorde");
@@ -138,6 +139,7 @@ const loop = setInterval(() => {
       recorde.textContent = "Recorde: " + localStorage.getItem("recorde");
     }
 
+    seta.src = "./media/images/seta_cima.png";
     pipe.src = "./media/images/pipe_plant.png";
     pipe.style.animation = "none";
     pipe.style.right = "";

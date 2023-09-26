@@ -73,7 +73,7 @@
   right: 30px;
   position: absolute;
   width: 70px;
-  bottom: 280px;
+  bottom: 230px;
 }
 
 .div_logo {
@@ -152,11 +152,23 @@
 .btn {
   z-index: 100;
   display: flex;
+  left: 2px;
   position: absolute;
   text-align: center;
   width: 80px;
   height: 20px;
   font-size: 10px;
+  font-weight: bold;
+  
+  justify-content: center;
+  padding: 4px 20px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #2980b9;
+  border-radius: 5px;
+  box-shadow: 0 3px 0 #2980b9;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .container {

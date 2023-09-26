@@ -191,7 +191,7 @@ document.body.addEventListener("keydown", (event) => {
     setTimeout(() => {
       mario.classList.remove("jump");
       audio_jump.src = "";
-    }, 500);
+    }, 400);
   }
 });
 

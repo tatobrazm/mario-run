@@ -115,12 +115,12 @@
   color: #035988;
   text-shadow: 2px 4px 5px #eee;
   text-align: center;
-  line-height: 1.0em;
+  line-height: 1em;
   letter-spacing: 1px;
   word-spacing: 2px;
   left: 20px;
   border-width: 2px 5px;
-  border-style: inset ;
+  border-style: inset;
   border-color: #2953be;
 }
 
@@ -197,7 +197,6 @@
   font-size: 12px;
   font-weight: italic;
   color: #fb2a00;
-  
 }
 
 .pisca {
@@ -235,19 +234,19 @@
   }
 
   10% {
-    bottom: 80px;
+    bottom: 60px;
   }
 
   20% {
-    bottom: 80px;
+    bottom: 65px;
   }
 
   30% {
-    bottom: 80px;
+    bottom: 70px;
   }
 
   40% {
-    bottom: 80px;
+    bottom: 75px;
   }
 
   50% {
@@ -255,23 +254,23 @@
   }
 
   60% {
-    bottom: 80px;
+    bottom: 75px;
   }
 
   70% {
-    bottom: 80px;
+    bottom: 70px;
   }
 
   80% {
-    bottom: 80px;
+    bottom: 65px;
   }
 
   90% {
-    bottom: 80px;
+    bottom: 60px;
   }
 
   95% {
-    bottom: 60px;
+    bottom: 40px;
   }
 
   100% {

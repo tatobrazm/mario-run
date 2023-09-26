@@ -265,5 +265,11 @@ function volumeMute() {
     volume1.volume = volumes;
     volume2.volume = volumes;
     volume3.volume = volumes;
+  }else{
+    volumes = 0.5;
+    localStorage.setItem("volume", 0.5);
+    volume1.volume = volumes;
+    volume2.volume = volumes;
+    volume3.volume = volumes;
   }
 }

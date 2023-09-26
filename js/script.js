@@ -95,7 +95,7 @@ function intensidade(intervalo, volta = 0) {
           bonusi += 10000;
           clearInterval(loopIntensidade);
         }
-        if (dificuldade == 1.0) {
+        if (dificuldade <= 1.0) {
           bonusi += 1000;
           pisca.src = "./media/images/galatico.png";
         }
